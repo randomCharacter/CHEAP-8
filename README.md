@@ -1,4 +1,5 @@
 #CHEAP-8
+[![Build Status](https://travis-ci.org/randomCharacter/CHEAP-8.svg?branch=master)](https://travis-ci.org/randomCharacter/CHEAP-8)
 
 Simple CHIP-8 emulator, assembler and disassembler written in Java.
 
