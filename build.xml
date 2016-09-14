@@ -10,7 +10,7 @@
   
   <!-- Compiler options -->
   
-  <property name="compiler.debug" value="on"/>
+  <property name="compiler.debug" value="off"/>
   <property name="compiler.generate.no.warnings" value="off"/>
   <property name="compiler.args" value=""/>
   <property name="compiler.max.memory" value="700m"/>
@@ -147,7 +147,7 @@
   
   <target name="compile.module.cheap-8.production" description="Compile module CHEAP-8; production classes">
     <mkdir dir="${cheap-8.output.dir}"/>
-    <javac destdir="${cheap-8.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.cheap-8}/javac">
+    <javac srcdir="src" destdir="${cheap-8.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="javac">
       <compilerarg line="${compiler.args.cheap-8}"/>
       <bootclasspath refid="cheap-8.module.bootclasspath"/>
       <classpath refid="cheap-8.module.production.classpath"/>
@@ -208,4 +208,5 @@
   </target>
   
   <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+  <target name="test" depends="all" description="test"/>
 </project>
